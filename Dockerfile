@@ -1,20 +1,23 @@
-# 使用小型的 node 基础镜像
+# 使用小型的 node 基础镜像进行构建
 FROM node:alpine AS builder
 
 # 设置工作目录
 WORKDIR /app
 
-# 复制 package.json 和 package-lock.json 到工作目录
+# 仅复制 package.json 和 package-lock.json
 COPY package*.json ./
 
-# 安装项目依赖
-RUN npm install --production
+# 安装仅生产环境依赖
+RUN npm ci --only=production
 
-# 复制其他源代码文件到工作目录
+# 复制其他必要的源代码文件到工作目录
 COPY . .
 
 # 构建项目
 RUN npm run build
+
+# 移除开发依赖
+RUN npm prune --production
 
 # 运行阶段，再次从小型的 node 基础镜像开始
 FROM node:alpine
@@ -23,7 +26,6 @@ FROM node:alpine
 WORKDIR /app
 
 # 从构建阶段复制构建的输出和 node_modules 到当前目录
-# 复制 public 目录和源代码文件
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/src ./src
 COPY --from=builder /app/.next ./.next
