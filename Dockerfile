@@ -1,23 +1,31 @@
-# 第一阶段：构建阶段
+# 使用小型的 node 基础镜像
 FROM node:alpine AS builder
 
-# 安装 git
-RUN apk add --no-cache git
-
-# 克隆代码到容器中
+# 设置工作目录
 WORKDIR /app
-RUN git clone https://github.com/dielect/webparse-chat-template-plugin.git
 
-# 安装依赖
-RUN npm install
+# 复制 package.json 和 package-lock.json 到工作目录
+COPY package*.json ./
 
-# 第二阶段：运行阶段
+# 安装项目依赖
+RUN npm install --production
+
+# 复制其他源代码文件到工作目录
+COPY . .
+
+# 构建项目
+RUN npm run build
+
+# 运行阶段，再次从小型的 node 基础镜像开始
 FROM node:alpine
 
+# 设置工作目录
 WORKDIR /app
 
-# 从构建阶段复制所有文件到当前目录
-COPY --from=builder /app .
+# 从构建阶段复制构建的输出和 node_modules 到当前目录
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package*.json ./
 
 # 暴露端口
 EXPOSE 3080
