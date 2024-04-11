@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
-      "url": "https://lobe.composere.com/api/parse",
+      "url": "https://lobe.composere.com/api/readability",
       "name": "parseArticle",
       "description": "Parsing the content of web pages based on links provided by the user",
       "parameters": {

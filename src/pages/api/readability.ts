@@ -1,4 +1,3 @@
-// pages/api/hello.js
 import {NextApiRequest, NextApiResponse} from 'next';
 import axios from 'axios';
 import {JSDOM} from 'jsdom';
