@@ -56,8 +56,20 @@ By following these steps, you should be able to seamlessly integrate and start u
 
 ---
 
-## HELP WANTED
-As someone new to Docker, I initially managed to build a Dockerfile that worked perfectly. However, as I continue to commit code, I can't guarantee that these changes won't affect the deployment of the Docker image. If you have a solid understanding of Docker and are willing to offer assistance, I would greatly appreciate your contact. Your expertise could be invaluable in ensuring smooth deployments going forward.
+## INSTALL
+**Docker**
+
+[official reference](https://github.com/vercel/next.js/blob/canary/examples/with-docker/Dockerfile)
+
+```shell
+git clone https://github.com/dielect/lobechat-template-plugin.git
+
+cd lobechat-template-plugin/
+
+docker build -t lobe-chat-plugin .
+
+docker run -d -p 3080:3080 lobechat-plugin
+```
 
 
 ## License
