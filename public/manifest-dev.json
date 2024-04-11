@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
-      "url": "http://localhost:3000/api/parse",
+      "url": "http://localhost:3080/api/parse",
       "name": "parseArticle",
       "description": "Parsing the content of web pages based on links provided by the user",
       "parameters": {
@@ -19,7 +19,6 @@
   ],
   "author": "dielectric",
   "createdAt": "2024-04-11",
-  "gateway": "http://localhost:3000/api/gateway",
   "identifier": "article-parse-plugin",
   "meta": {
     "avatar": "\uD83E\uDD16",
