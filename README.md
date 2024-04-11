@@ -55,13 +55,9 @@ By following these steps, you should be able to seamlessly integrate and start u
 **This section provides clear and concise instructions on how to use your plugin, tailored to your requirements. Feel free to adjust any part of it to better fit your project's setup or naming conventions.**
 
 
-## Contributing
-
-(If you're open to contributions, explain how others can contribute to your project. This could include submitting issues, pull requests, and guidelines for contributions.)
-
 ## License
 
-(Include information about your project's license here. If you haven't decided on a license, you might want to do some research or leave this section out until you have.)
+[Mit License](./LICENSE)
 
 ## Acknowledgments
 
