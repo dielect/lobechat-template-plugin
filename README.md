@@ -35,6 +35,7 @@ To get started with using this plugin, please follow the steps below:
     ```plain text
     http://localhost:3080/manifest-dev.json
     ```
+   ![How to Install](./how-to-install.png)
 
 Replace the URL with the appropriate path where your development server is running and the plugin's manifest file is accessible.
 
