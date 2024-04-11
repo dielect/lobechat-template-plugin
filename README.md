@@ -1,4 +1,10 @@
-# LobeChat Template Plugin
+<div align="center"><a name="readme-top"></a>
+
+
+<h1>LobeChat Template Plugin</h1>
+
+Self-use LobeChat plugin collection, unofficial<br/>
+</div>
 
 ## Introduction
 
