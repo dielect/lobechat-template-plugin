@@ -20,6 +20,7 @@
   "author": "dielectric",
   "createdAt": "2024-04-11",
   "identifier": "article-parse-plugin",
+  "homepage": "https://github.com/dielect/lobechat-template-plugin.git",
   "meta": {
     "avatar": "\uD83E\uDD16",
     "tags": ["template"],
