@@ -23,6 +23,9 @@ FROM node:alpine
 WORKDIR /app
 
 # 从构建阶段复制构建的输出和 node_modules 到当前目录
+# 复制 public 目录和源代码文件
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/src ./src
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package*.json ./
