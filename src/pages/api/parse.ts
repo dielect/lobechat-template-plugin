@@ -9,11 +9,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // 处理POST请求
     if (req.method === 'POST') {
         let body = req.body
-        console.log('body', body)
-        console.log(typeof body)
         body = JSON.parse(body);
         const {url} = body;
-        console.log('url', url)
         if (!url) {
             res.status(400).json({message: 'URL is required in the request body.'});
             return;
