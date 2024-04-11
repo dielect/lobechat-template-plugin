@@ -1,10 +1,15 @@
 <div align="center"><a name="readme-top"></a>
 
-
 <h1>LobeChat Template Plugin</h1>
 
-Self-use LobeChat plugin collection, unofficial<br/>
+---
+
+![lobe-chat-plugin](./lobe-chat-plugin.png)
+
+<B>Self-use LobeChat plugin collection, unofficial</B>
 </div>
+
+---
 
 ## Introduction
 
@@ -60,4 +65,4 @@ By following these steps, you should be able to seamlessly integrate and start u
 
 ## Acknowledgments
 
-[LobeChat development documentation](https://chat-docs.lobehub.com/zh/usage/plugins/development)
+[develop-doc](https://chat-docs.lobehub.com/zh/usage/plugins/development)
