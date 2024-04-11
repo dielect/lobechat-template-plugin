@@ -8,9 +8,10 @@ import {Readability} from '@mozilla/readability';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     // 处理POST请求
     if (req.method === 'POST') {
-        const body = req.body
+        let body = req.body
         console.log('body', body)
-        // body = JSON.parse(body);
+        console.log(typeof body)
+        body = JSON.parse(body);
         const {url} = body;
         console.log('url', url)
         if (!url) {
