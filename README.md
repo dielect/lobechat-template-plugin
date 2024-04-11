@@ -52,7 +52,12 @@ Replace the URL with the appropriate path where your development server is runni
 
 By following these steps, you should be able to seamlessly integrate and start using the plugin with LobeChat to enhance your chat experience.
 
-**This section provides clear and concise instructions on how to use your plugin, tailored to your requirements. Feel free to adjust any part of it to better fit your project's setup or naming conventions.**
+<B>This section provides clear and concise instructions on how to use your plugin, tailored to your requirements. Feel free to adjust any part of it to better fit your project's setup or naming conventions.</B>
+
+---
+
+## HELP WANTED
+As someone new to Docker, I initially managed to build a Dockerfile that worked perfectly. However, as I continue to commit code, I can't guarantee that these changes won't affect the deployment of the Docker image. If you have a solid understanding of Docker and are willing to offer assistance, I would greatly appreciate your contact. Your expertise could be invaluable in ensuring smooth deployments going forward.
 
 
 ## License
