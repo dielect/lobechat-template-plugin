@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
-      "url": "https://lobe.composere.com/api/parse",
+      "url": "http://localhost:3080/api/parse",
       "name": "parseArticle",
       "description": "Parsing the content of web pages based on links provided by the user",
       "parameters": {
@@ -19,9 +19,10 @@
   ],
   "author": "dielectric",
   "createdAt": "2024-04-11",
+  "gateway": "http://localhost:3080/api/gateway",
   "identifier": "article-parse-plugin",
   "meta": {
-    "avatar": "\uD83E\uDD16",
+    "avatar": "\uD83D\uDE80",
     "tags": ["template"],
     "title": "网页解析",
     "description": "This is the plugin template for LobeChat plugin development"
