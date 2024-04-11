@@ -31,4 +31,4 @@ COPY --from=builder /app/package*.json ./
 EXPOSE 3080
 
 # 启动应用
-CMD ["npm", "start", "-p", "3080"]
+CMD ["npm", "start"]
