@@ -20,6 +20,8 @@ const nextConfig = {
             },
         ];
     },
+    // 将 output: 'standalone' 配置添加到 nextConfig 中
+    output: 'standalone',
 };
 
 
