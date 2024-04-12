@@ -22,8 +22,14 @@ As someone new to Node.js, diving into the development of plugins for LobeChat p
 
 ## Features
 
-- [x] **Web Content Parsing**: This feature allows for the extraction and analysis of web page content. By integrating this functionality, users can easily parse the content of any given URL, making it simpler to incorporate web data into their LobeChat experience.
-
+- [x] **Web Content Parsing**: Web content parsing tool, core based on readability.
+   ```text
+    https://lobe.composere.com/readability/manifest-openapi.json
+   ```
+- [x] **SearXNG Search**: Free networked search, based on the searXng implementation.
+   ```text
+   https://lobe.composere.com/searxng/manifest-openapi.json
+   ```
 ## How to Use
 
 To get started with using this plugin, please follow the steps below:
@@ -78,4 +84,5 @@ docker run -e PRESET_TOKEN=<your token> -d -p 3080:3080 lobe-chat-plugin
 
 ## Acknowledgments
 
-[develop-doc](https://chat-docs.lobehub.com/zh/usage/plugins/development)
+[searXng](https://github.com/searxng/searxng)
+[readability](https://github.com/mozilla/readability)
