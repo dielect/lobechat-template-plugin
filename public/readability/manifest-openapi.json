@@ -12,7 +12,7 @@
       "template"
     ],
     "title": "网页解析",
-    "description": "This is the plugin template for LobeChat plugin development"
+    "description": "解析网页内容"
   },
   "version": "1"
 }
