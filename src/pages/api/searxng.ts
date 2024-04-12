@@ -1,10 +1,14 @@
 import {NextApiRequest, NextApiResponse} from 'next';
 import axios from 'axios';
-import {JSDOM} from 'jsdom';
-import {Readability} from '@mozilla/readability';
 
 // 从环境变量中获取预设的 token
 const presetToken = process.env.PRESET_TOKEN;
+
+interface Result {
+    title: string;
+    link: string;
+    content: string;
+}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     // 获取 Authorization 头部
@@ -22,15 +26,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // 处理POST请求
     if (req.method === 'POST') {
         let body = req.body
-        const {url} = body;
-        if (!url) {
-            res.status(400).json({message: 'URL is required in the request body.'});
+        const {query} = body;
+        if (!query) {
+            res.status(400).json({message: 'query is required in the request body.'});
             return;
         }
-        const article = await fetchAndParseArticle(url);
-        if (article) {
-            const textContent = article.textContent;
-            res.status(200).json({text: textContent});
+        const response = await fetchSearXng(query);
+        if (response) {
+            // 获取最前面的5条数据
+            const results = response.slice(0, 5);
+            res.status(200).json({results});
         } else {
             res.status(500).json({message: 'Failed to fetch and parse the article.'});
         }
@@ -41,13 +46,22 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 }
 
-async function fetchAndParseArticle(url: string) {
+
+async function fetchSearXng(query: string): Promise<Result[]> {
     try {
-        const response = await axios.get(url, {timeout: 5000}) // Set timeout to 5000 milliseconds
-        ;
-        const document = new JSDOM(response.data).window.document;
-        return new Readability(document).parse();
+        const url = `https://www.composere.com/search?q=${query}&format=json`
+        console.log(url)
+        const response = await axios.get(url) // Set timeout to 5000 milliseconds
+        if (response.data && response.data.results) {
+            return response.data.results.map((result: any) => ({
+                title: result.title,
+                link: result.url,
+                content: result.content
+            }));
+        }
+        return [];
     } catch (error) {
         console.error(error);
+        return [];
     }
 }
