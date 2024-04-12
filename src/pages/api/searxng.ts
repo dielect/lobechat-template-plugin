@@ -1,9 +1,6 @@
 import {NextApiRequest, NextApiResponse} from 'next';
 import axios from 'axios';
 
-// 从环境变量中获取预设的 token
-const presetToken = process.env.PRESET_TOKEN;
-
 interface Result {
     title: string;
     link: string;
@@ -11,18 +8,6 @@ interface Result {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    // 获取 Authorization 头部
-    const authHeader = req.headers.authorization;
-    // 检查 Authorization 头部是否存在
-    if (!authHeader) {
-        res.status(401).json({message: 'Authorization header is required.'});
-        return;
-    }
-    // 检查 Authorization 头部的值是否与预设的 token 匹配
-    if (authHeader !== `Bearer ${presetToken}`) {
-        res.status(401).json({message: 'Invalid token.'});
-        return;
-    }
     // 处理POST请求
     if (req.method === 'POST') {
         let body = req.body
