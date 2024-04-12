@@ -4,6 +4,7 @@
   "api": [],
   "author": "dielectric",
   "createdAt": "2024-04-11",
+  "homepage": "https://github.com/dielect/lobechat-template-plugin.git",
   "identifier": "article-parse-plugin",
   "meta": {
     "avatar": "\uD83D\uDE80",
