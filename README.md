@@ -44,7 +44,7 @@ To get started with using this plugin, please follow the steps below:
       Once the development server is running, you can integrate this plugin into your LobeChat environment. To do so, you will need to specify the path to the plugin's manifest file in your custom plugin configuration. For web content parsing, for example, you can use:
 
     ```plain text
-    http://localhost:3080/manifest-dev.json
+    http://localhost:3080/readability/manifest-openapi.json
     ```
    ![How to Install](./how-to-install.png)
 
@@ -68,7 +68,7 @@ cd lobechat-template-plugin/
 
 docker build -t lobe-chat-plugin .
 
-docker run -d -p 3080:3080 lobechat-plugin
+docker run -e PRESET_TOKEN=<your token> -d -p 3080:3080 lobe-chat-plugin
 ```
 
 
