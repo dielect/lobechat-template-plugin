@@ -3,8 +3,8 @@ import axios from 'axios';
 import {JSDOM} from 'jsdom';
 import {Readability} from '@mozilla/readability';
 
-
-
+// 从环境变量中获取预设的 token
+const presetToken = process.env.PRESET_TOKEN;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     // 获取 Authorization 头部
