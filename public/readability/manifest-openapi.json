@@ -7,7 +7,7 @@
   "homepage": "https://github.com/dielect/lobechat-template-plugin.git",
   "identifier": "article-parse-plugin",
   "meta": {
-    "avatar": "\uD83D\uDE80",
+    "avatar": "https://lobe.composere.com/readability-avatar.svg",
     "tags": [
       "template"
     ],
